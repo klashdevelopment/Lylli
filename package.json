@@ -1,0 +1,32 @@
+{
+  "name": "lylli",
+  "version": "1.0.0",
+  "description": "Lylli is a multi-purpose utility toolbox for all platforms.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager ./ Lylli --platform=darwin --arch=x64 --out=build --overwrite --icon=./public/assets/logo.png",
+    "package-windows": "electron-packager ./ Lylli --platform=win32 --arch=x64 --out=build --overwrite --icon=./public/assets/logo.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klashdevelopment/Lylli.git"
+  },
+  "keywords": [
+    "utility",
+    "electron"
+  ],
+  "author": "GavinGoGaming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klashdevelopment/Lylli/issues"
+  },
+  "homepage": "https://github.com/klashdevelopment/Lylli#readme",
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.1",
+    "electron": "^23.1.0"
+  }
+}

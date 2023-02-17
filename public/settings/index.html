@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lylli</title>
+    <link href="https://gtml.gavingogamingrepl.repl.co/regular-ass-style.css" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/948a9e2c67.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li data-link="../index.html"><span>Home</span><i class='fa-solid fa-house'></i></li>
+            <li data-link="../settings/index.html"><span>Settings</span><i class='fa-solid fa-gear'></i></li>
+            <li class="spacer">Utility</li>
+            <li data-link="../discord/index.html"><span>Mod Discord</span><i class='fa-brands fa-discord'></i></li>
+            <li data-link="../chat/index.html"><span>AI Chatbot</span><i class='fa-solid fa-microchip'></i></li>
+            <li data-link="../browse/index.html"><span>QuickBrowse</span><i class='fa-solid fa-magnifying-glass'></i></li>
+        </ul>
+    </nav>
+    <center class="content">
+        <h2><b>Settings</b></h2>
+        <h3>Configue LylliUtility here!</h3>
+        <div id="sep1" style="margin: 6px;background-color:white;height:1px;width:98%;"></div>
+        <h5>QuickBrowse Options</h5>
+        Search Engine (%s):
+        <input placeholder="Search Engine" id="sear"><br>
+        <button onclick="update()">Save Settings</button>
+    </center>
+    <script>
+        var sear = document.querySelector('#sear');
+        if(window.localStorage['search_engine'] == null||
+        window.localStorage['search_engine'] == undefined||
+        window.localStorage['search_engine'] == "") {
+            window.localStorage['search_engine'] = "https://google.com/search?q=%s";
+        }
+        sear.value = window.localStorage['search_engine'];
+        function update() {
+            window.localStorage['search_engine']=sear.value;
+            document.querySelector('#sep1').insertAdjacentHTML('afterend', "<h3 style='color:limegreen;' id='res'>Saved!</h3>");
+            setTimeout(()=>{
+                document.querySelector('#res').remove();
+            }, 2000);
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+</html>

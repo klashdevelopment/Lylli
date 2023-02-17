@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lylli</title>
+    <link href="https://gtml.gavingogamingrepl.repl.co/regular-ass-style.css" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/948a9e2c67.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li data-link="../index.html"><span>Home</span><i class='fa-solid fa-house'></i></li>
+            <li data-link="../settings/index.html"><span>Settings</span><i class='fa-solid fa-gear'></i></li>
+            <li class="spacer">Utility</li>
+            <li data-link="../discord/index.html"><span>Mod Discord</span><i class='fa-brands fa-discord'></i></li>
+            <li data-link="../chat/index.html"><span>AI Chatbot</span><i class='fa-solid fa-microchip'></i></li>
+            <li data-link="../browse/index.html"><span>QuickBrowse</span><i class='fa-solid fa-magnifying-glass'></i></li>
+        </ul>
+    </nav>
+    <center class="content">
+        <h2><b>AI Chat</b></h2>
+        <div style="margin: 6px;background-color:white;height:1px;width:98%;"></div>
+        <h4>Pick your service</h4>
+        <button onclick="document.querySelector('#frame').src='https://brainbase.gavingogamingrepl.repl.co/';
+        document.querySelector('#frame').style.opacity=100;">
+            <i class='fa-solid fa-brain'></i>Brainbase</button>
+        <button onclick="document.querySelector('#frame').src='https://chat.openai.com/';
+        document.querySelector('#frame').style.opacity=100;">
+            <i class='fa-solid fa-comments'></i>ChatGPT</button>
+        <br>
+        <webview id="frame" src="https://gavingogaming.com/lylli">
+        </webview>
+    </center>
+    <script src="../index.js"></script>
+</body>
+</html>

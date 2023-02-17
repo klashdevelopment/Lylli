@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lylli</title>
+    <link href="https://gtml.gavingogamingrepl.repl.co/regular-ass-style.css" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+    <link href="./discord.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/948a9e2c67.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li data-link="../index.html"><span>Home</span><i class='fa-solid fa-house'></i></li>
+            <li data-link="../settings/index.html"><span>Settings</span><i class='fa-solid fa-gear'></i></li>
+            <li class="spacer">Utility</li>
+            <li data-link="../discord/index.html"><span>Mod Discord</span><i class='fa-brands fa-discord'></i></li>
+            <li data-link="../chat/index.html"><span>AI Chatbot</span><i class='fa-solid fa-microchip'></i></li>
+            <li data-link="../browse/index.html"><span>QuickBrowse</span><i class='fa-solid fa-magnifying-glass'></i></li>
+        </ul>
+    </nav>
+    <center class="content">
+        <h2><b>Discord Modding</b></h2>
+        <h3>Rich Presence</h3>
+        <div style="margin: 6px;background-color:white;height:1px;width:98%;"></div>
+        <button>Load Defaults</button><br>
+        <h4>Text</h4>
+        <input placeholder="Text Line 1" id="tl1"><br>
+        <input placeholder="Text Line 2" id="tl2">
+        <h4>Images</h4>
+        <input placeholder="ApplicationID" id="aid"><br>
+        <input placeholder="Image key" id="liid"><br>
+        <input placeholder="Image text" id="litx"><br>
+        <input placeholder="Small image key" id="siid"><br>
+        <input placeholder="Small image text" id="sitx">
+        <h4>Buttons</h4>
+        <input type="checkbox" id="eb1"> Enable Button 1<br>
+        <input type="checkbox" id="eb2"> Enable Button 2<br>
+        <div id="b1">
+            <input id="b1name" placeholder="Button 1 Name"><br>
+            <input id="b1url" placeholder="Button 1 URL">
+        </div><br>
+        <div id="b2">
+            <input id="b2name" placeholder="Button 2 Name"><br>
+            <input id="b2url" placeholder="Button 2 URL">
+        </div><br>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button><br>
+    </center>
+    <script src="./discord.js" nodeIntegration></script>
+    <script src="../index.js"></script>
+</body>
+</html>
