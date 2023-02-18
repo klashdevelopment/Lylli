@@ -36,3 +36,5 @@ jobs:
       uses: yakuhzi/release-asset@v1.2.3
       with:
         file: build/Lylli-win32-x64.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
