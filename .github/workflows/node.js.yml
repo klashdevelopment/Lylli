@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm i
+    - run: npm run package-windows
+    - name: tonybogdanov-zip
+      uses: TonyBogdanov/zip@1.0
+      with:
+        args: zip -qq -r ./build/Lylli-win32-x64.zip ./build/Lylli-win32-x64
+    - name: Action Release
+      uses: yakuhzi/release-asset@v1.2.3
+      with:
+        file: build/Lylli-win32-x64.zip
