@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -22,6 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Cache apt-install
+      uses: daaku/gh-action-apt-install@v4
+      with:
+        packages: wine64
     - run: npm i
     - run: npm run package-windows
     - name: tonybogdanov-zip
